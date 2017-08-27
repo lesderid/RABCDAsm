@@ -1,0 +1,98 @@
+name "rabcdasm"
+description "Robust ABC (ActionScript Bytecode) [Dis-]Assembler"
+authors "Vladimir Panteleev <vladimir@thecybershadow.net>"
+homepage "https://github.com/CyberShadow/RABCDAsm"
+copyright "Copyright 2010, 2011, 2012, 2013, 2014, 2015, 2016 Vladimir Panteleev <vladimir@thecybershadow.net>"
+license "GPL-3.0"
+
+systemDependencies "liblzma (optional)"
+
+sourcePaths "library"
+
+configuration "library" {
+    targetType "library"
+    sourcePaths "library" "deimos" "deimos/lzma_"
+
+    libs "lzma"
+    versions "HAVE_LZMA"
+}
+
+configuration "library-nolzma" {
+    targetType "library"
+
+    excludedSourceFiles "library/lzma.d"
+}
+
+configuration "rabcdasm" {
+    targetName "rabcdasm"
+    targetType "executable"
+    sourceFiles "rabcdasm.d"
+
+    excludedSourceFiles "library/lzma.d"
+}
+
+configuration "rabcasm" {
+    targetName "rabcasm"
+    targetType "executable"
+    sourceFiles "rabcasm.d"
+
+    excludedSourceFiles "library/lzma.d"
+}
+
+configuration "abcexport" {
+    targetName "abcexport"
+    targetType "executable"
+    sourceFiles "abcexport.d"
+
+    excludedSourceFiles "library/lzma.d"
+}
+
+configuration "abcreplace" {
+    targetName "abcreplace"
+    targetType "executable"
+    sourceFiles "abcreplace.d"
+
+    excludedSourceFiles "library/lzma.d"
+}
+
+configuration "swfdecompress" {
+    targetName "swfdecompress"
+    targetType "executable"
+    sourceFiles "swfdecompress.d"
+
+    excludedSourceFiles "library/lzma.d"
+}
+
+configuration "swf7zcompress" {
+    targetName "swf7zcompress"
+    targetType "executable"
+    sourceFiles "swf7zcompress.d"
+
+    excludedSourceFiles "library/lzma.d"
+}
+
+configuration "swflzmacompress" {
+    targetName "swflzmacompress"
+    targetType "executable"
+    sourcePaths "library" "deimos" "deimos/lzma_"
+    sourceFiles "swflzmacompress.d"
+
+    libs "lzma"
+    versions "HAVE_LZMA"
+}
+
+configuration "swfbinexport" {
+    targetName "swfbinexport"
+    targetType "executable"
+    sourceFiles "swfbinexport.d"
+
+    excludedSourceFiles "library/lzma.d"
+}
+
+configuration "swfbinreplace" {
+    targetName "swfbinreplace"
+    targetType "executable"
+    sourceFiles "swfbinreplace.d"
+
+    excludedSourceFiles "library/lzma.d"
+}

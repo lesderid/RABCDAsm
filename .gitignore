@@ -5,6 +5,7 @@
 *.exp
 *.lib
 *.suo
+*.a
 
 /build_rabcdasm
 /rabcasm
@@ -16,3 +17,10 @@
 /swfdecompress
 /swf7zcompress
 /swflzmacompress
+
+.dub
+docs.json
+__dummy.html
+*.o
+*.obj
+__test__*__
